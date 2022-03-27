@@ -21,7 +21,7 @@ Route::middleware('auth:sanctum')->group(function (){
         return $request->user();
     });
 
-    Route::apiResource('categories', CategoryController::class);
+    Route::apiResource('categories', CategoryController::class)->only('index', 'show');
 });
 
 
