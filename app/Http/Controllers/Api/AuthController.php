@@ -69,6 +69,6 @@ class AuthController extends Controller
             'status_code' => 200,
             'message' => 'Logout Successful.',
             'data' => null,
-        ]);;
+        ]);
     }
 }
