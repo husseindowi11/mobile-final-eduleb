@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Http\Resources\Auth\authResource;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -43,9 +44,12 @@ class AuthController extends Controller
             ]);
         }
 
-        return "hi";
 
-        return $user->createToken($request->device_name)->plainTextToken;
+        return response()->json([
+            'status_code' => 200,
+            'message' => 'Login successful.',
+            'data' => new authResource($user),
+        ]);
     }
 
     public function logout(Request $request)

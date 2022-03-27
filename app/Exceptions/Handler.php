@@ -33,71 +33,77 @@ class Handler extends ExceptionHandler
         'password_confirmation',
     ];
 
-    /**
-     * Register the exception handling callbacks for the application.
-     *
-     * @return void
-     */
-    public function register()
+    public function report(Throwable $exception)
     {
-        $this->renderable(function (Throwable $e) {
+        parent::report($exception);
+    }
 
-            if ($e instanceof ValidationException){
-                return response()->json([
-                    'statusCode' => $e->status,
-                    'message' =>  $e->errors(),
-                    'data' => null,
-                ]);
-            }
 
-            if ($e instanceof ModelNotFoundException){
-                return response()->json([
-                    'statusCode' => $e->status,
-                    'message' => str_replace('App\\Models\\', '', $e->getModel()).' not found.',
-                    'data' => null,
-                ]);
-            }
+    public function render($request, Throwable $exception)
+    {
 
-            if ($e instanceof NotFoundHttpException){
-                return response()->json([
-                    'statusCode' => $e->status,
-                    'message' => 'Could not find what you were looking for.',
-                    'data' => null,
-                ]);
-            }
 
-            if ($e instanceof AuthorizationException){
-                return response()->json([
-                    'statusCode' => $e->status,
-                    'message' => 'Unauthorized.',
-                    'data' => null,
-                ]);
-            }
+        if ($exception instanceof ValidationException){
+            $string = json_encode($exception->errors());
+            $string = str_replace (array('[', ']'), '' , $string);
+            $string = str_replace (array('{', '}'), '' , $string);
+            $string = str_replace (array('"', '"'), '' , $string);
+            return response()->json([
+                'statusCode' => 400,
+                'message' =>  $string,
+                'data' => null,
+            ]);
+        }
 
-            if ($e instanceof MethodNotAllowedHttpException){
-                return response()->json([
-                    'statusCode' => $e->status,
-                    'message' => 'This method is not allowed for this endpoint.',
-                    'data' => null,
-                ]);
+        if ($exception instanceof ModelNotFoundException){
+            return response()->json([
+                'statusCode' => 404,
+                'message' => str_replace('App\\Models\\', '', $exception->getModel()).' not found.',
+                'data' => null,
+            ]);
+        }
 
-            }
+        if ($exception instanceof NotFoundHttpException){
+            return response()->json([
+                'statusCode' => 404,
+                'message' => 'Could not find what you were looking for.',
+                'data' => null,
+            ]);
+        }
 
-            if ($e instanceof QueryException ){
-                return response()->json([
-                    'statusCode' => $e->status,
-                    'message' => 'Sql error occurred.',
-                    'data' => null,
-                ]);
-            }
+        if ($exception instanceof MethodNotAllowedHttpException){
+            return response()->json([
+                'statusCode' => 405,
+                'message' => 'This method is not allowed for this endpoint.',
+                'data' => null,
+            ]);
 
-            if ($e instanceof Throwable){
-                return response()->json([
-                    'statusCode' => $e->status,
-                    'message' => $e->getMessage() ?? 'An error occurred.',
-                    'data' => null,
-                ]);
-            }
-        });
+        }
+
+        if ($exception instanceof QueryException ){
+            return response()->json([
+                'statusCode' => 500,
+                'message' => 'Sql error occurred.',
+                'data' => null,
+            ]);
+        }
+
+        if ($exception instanceof AuthorizationException){
+            return response()->json([
+                'statusCode' => 401,
+                'message' => 'Unauthorized.',
+                'data' => null,
+            ]);
+        }
+
+        if ($exception instanceof Throwable){
+            return response()->json([
+                'statusCode' => 500,
+                'message' => $exception->getMessage() ?? 'An error occurred.',
+                'data' => null,
+            ]);
+        }
+
+        return parent::render($request, $exception);
     }
 }
