@@ -11,6 +11,19 @@ use Illuminate\Http\Request;
 
 class UserCourseController extends Controller
 {
+
+    //store course to user course list
+    public function index(){
+
+        $data = auth()->user()->courses;
+
+        return response()->json([
+            'status_code' => 200,
+            'message' => 'Course was added successfully to user course list.',
+            'data' =>  userCourseResource::collection($data)
+        ]);
+    }
+
     //store course to user course list
     public function store(UserCourseRequest $request){
 
