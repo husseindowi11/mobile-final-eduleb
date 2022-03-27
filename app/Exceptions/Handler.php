@@ -79,7 +79,7 @@ class Handler extends ExceptionHandler
         if ($exception instanceof QueryException ){
             return response()->json([
                 'statusCode' => 500,
-                'message' => 'Sql error occurred.',
+                'message' => $exception->getMessage(),
                 'data' => null,
             ]);
         }
