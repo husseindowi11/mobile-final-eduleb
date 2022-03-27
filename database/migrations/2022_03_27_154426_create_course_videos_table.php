@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('course_videos', function (Blueprint $table) {
             $table->id();
             $table->text('name');
+            $table->text('url');
             $table->foreignId('course_id')->constrained('courses');
             $table->timestamps();
         });
