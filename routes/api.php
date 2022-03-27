@@ -3,6 +3,7 @@
 use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\Api\CategoryController;
 use App\Http\Controllers\Api\CourseController;
+use App\Http\Controllers\Api\UserCourseController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -24,6 +25,7 @@ Route::middleware('auth:sanctum')->group(function (){
 
     Route::apiResource('categories', CategoryController::class)->only('index', 'show');
     Route::apiResource('courses', CourseController::class)->only('show');
+    Route::apiResource('user-courses', UserCourseController::class)->only('store');
 });
 
 
