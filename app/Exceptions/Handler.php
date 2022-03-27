@@ -44,13 +44,9 @@ class Handler extends ExceptionHandler
 
 
         if ($exception instanceof ValidationException){
-            $string = json_encode($exception->errors());
-            $string = str_replace (array('[', ']'), '' , $string);
-            $string = str_replace (array('{', '}'), '' , $string);
-            $string = str_replace (array('"', '"'), '' , $string);
             return response()->json([
-                'statusCode' => 400,
-                'message' =>  $string,
+                'statusCode' => $exception->status,
+                'message' =>  $exception->errors(),
                 'data' => null,
             ]);
         }
@@ -65,7 +61,7 @@ class Handler extends ExceptionHandler
 
         if ($exception instanceof NotFoundHttpException){
             return response()->json([
-                'statusCode' => 404,
+                'statusCode' => $exception->getStatusCode(),
                 'message' => 'Could not find what you were looking for.',
                 'data' => null,
             ]);
@@ -73,7 +69,7 @@ class Handler extends ExceptionHandler
 
         if ($exception instanceof MethodNotAllowedHttpException){
             return response()->json([
-                'statusCode' => 405,
+                'statusCode' => $exception->getStatusCode(),
                 'message' => 'This method is not allowed for this endpoint.',
                 'data' => null,
             ]);
@@ -90,7 +86,7 @@ class Handler extends ExceptionHandler
 
         if ($exception instanceof AuthorizationException){
             return response()->json([
-                'statusCode' => 401,
+                'statusCode' => $exception->getCode(),
                 'message' => 'Unauthorized.',
                 'data' => null,
             ]);
@@ -98,7 +94,7 @@ class Handler extends ExceptionHandler
 
         if ($exception instanceof Throwable){
             return response()->json([
-                'statusCode' => 500,
+                'statusCode' => $exception->getCode(),
                 'message' => $exception->getMessage() ?? 'An error occurred.',
                 'data' => null,
             ]);

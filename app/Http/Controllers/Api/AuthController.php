@@ -26,7 +26,11 @@ class AuthController extends Controller
             'password' => Hash::make($request->password),
         ]);
 
-        return $user->createToken($request->email)->plainTextToken;
+        return response()->json([
+            'status_code' => 200,
+            'message' => 'Register successful.',
+            'data' => new authResource($user),
+        ]);
     }
 
     public function login(Request $request)
@@ -44,6 +48,7 @@ class AuthController extends Controller
             ]);
         }
 
+        $user->access_token = $user->createToken($request->email)->plainTextToken;
 
         return response()->json([
             'status_code' => 200,

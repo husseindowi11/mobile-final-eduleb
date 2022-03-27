@@ -15,9 +15,9 @@ class authResource extends JsonResource
     public function toArray($request)
     {
         return [
-//            'name' => $this->name,
-//            'email' => $this->email,
-            'access_token' => $this->
+            'name' => $this->name,
+            'email' => $this->email,
+            'access_token' => $this->access_token
         ];
     }
 }
