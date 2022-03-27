@@ -3,6 +3,7 @@
 namespace App\Exceptions;
 
 use Illuminate\Auth\Access\AuthorizationException;
+use Illuminate\Database\QueryException;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 use Symfony\Component\HttpKernel\Exception\MethodNotAllowedHttpException;
 use Throwable;
@@ -53,6 +54,16 @@ class Handler extends ExceptionHandler
                 ]);
 
             }
+
+            if ($e instanceof QueryException ){
+                return response()->json([
+                    'statusCode' => 500,
+                    'message' => 'Sql error occurred.',
+                    'data' => null,
+                ]);
+            }
+
+
         });
     }
 }
