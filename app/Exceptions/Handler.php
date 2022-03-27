@@ -3,6 +3,7 @@
 namespace App\Exceptions;
 
 use Illuminate\Auth\Access\AuthorizationException;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Database\QueryException;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 use Symfony\Component\HttpKernel\Exception\MethodNotAllowedHttpException;
@@ -39,6 +40,15 @@ class Handler extends ExceptionHandler
     public function register()
     {
         $this->renderable(function (Throwable $e) {
+
+
+            if ($e instanceof ModelNotFoundException){
+                return response()->json([
+                    'statusCode' => 404,
+                    'message' => str_replace('App\\Models\\', '', $exception->getModel()).' not found.',
+                    'data' => null,
+                ]);
+            }
 
             if ($e instanceof NotFoundHttpException){
                 return response()->json([
