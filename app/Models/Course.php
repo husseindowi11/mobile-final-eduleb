@@ -17,4 +17,8 @@ class Course extends Model
         'is_featured',
         'created_by'
     ];
+
+    public function course_videos(){
+        return $this->hasMany(CourseVideo::class);
+    }
 }
