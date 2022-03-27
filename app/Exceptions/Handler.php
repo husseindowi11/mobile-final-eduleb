@@ -63,7 +63,13 @@ class Handler extends ExceptionHandler
                 ]);
             }
 
-
+            if ($e instanceof Throwable){
+                return response()->json([
+                    'statusCode' => 500,
+                    'message' => $exception->getMessage() ?? 'An error occurred.',
+                    'data' => null,
+                ]);
+            }
         });
     }
 }
