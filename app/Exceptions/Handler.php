@@ -6,6 +6,7 @@ use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Database\QueryException;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+use Illuminate\Validation\UnauthorizedException;
 use Illuminate\Validation\ValidationException;
 use Symfony\Component\HttpKernel\Exception\MethodNotAllowedHttpException;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
@@ -86,7 +87,7 @@ class Handler extends ExceptionHandler
 
         if ($exception instanceof AuthorizationException){
             return response()->json([
-                'statusCode' => $exception->getCode(),
+                'statusCode' => 1,
                 'message' => 'Unauthorized.',
                 'data' => null,
             ]);
