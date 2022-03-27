@@ -6,6 +6,7 @@ use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Database\QueryException;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 use Symfony\Component\HttpKernel\Exception\MethodNotAllowedHttpException;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Throwable;
 
 class Handler extends ExceptionHandler
@@ -38,6 +39,15 @@ class Handler extends ExceptionHandler
     public function register()
     {
         $this->renderable(function (Throwable $e) {
+
+            if ($e instanceof NotFoundHttpException){
+                return response()->json([
+                    'statusCode' => 404,
+                    'message' => 'Could not find what you were looking for.',
+                    'data' => null,
+                ]);
+            }
+
             if ($e instanceof AuthorizationException){
                 return response()->json([
                     'statusCode' => 401,
@@ -66,7 +76,7 @@ class Handler extends ExceptionHandler
             if ($e instanceof Throwable){
                 return response()->json([
                     'statusCode' => 500,
-                    'message' => $exception->getMessage() ?? 'An error occurred.',
+                    'message' => $e->getMessage() ?? 'An error occurred.',
                     'data' => null,
                 ]);
             }
