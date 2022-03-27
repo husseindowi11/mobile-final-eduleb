@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('category_id')->constrained('categories');
             $table->text('name');
-            $table->text('slug');
+            $table->text('slug')->unique();
             $table->text('description');
             $table->text('image');
             $table->boolean('is_featured');
