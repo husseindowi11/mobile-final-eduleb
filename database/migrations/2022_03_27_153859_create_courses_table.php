@@ -16,8 +16,8 @@ return new class extends Migration
         Schema::create('courses', function (Blueprint $table) {
             $table->id();
             $table->foreignId('category_id')->constrained('categories');
-            $table->text('name');
-            $table->text('slug')->unique();
+            $table->string('name', 64);
+            $table->string('slug', 64)->unique();
             $table->text('description');
             $table->text('image');
             $table->boolean('is_featured');
