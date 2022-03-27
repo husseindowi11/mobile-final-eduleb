@@ -44,7 +44,7 @@ class Handler extends ExceptionHandler
 
             if ($e instanceof ValidationException){
                 return response()->json([
-                    'statusCode' => 400,
+                    'statusCode' => $e->status,
                     'message' =>  $e->errors(),
                     'data' => null,
                 ]);
@@ -52,7 +52,7 @@ class Handler extends ExceptionHandler
 
             if ($e instanceof ModelNotFoundException){
                 return response()->json([
-                    'statusCode' => 404,
+                    'statusCode' => $e->status,
                     'message' => str_replace('App\\Models\\', '', $e->getModel()).' not found.',
                     'data' => null,
                 ]);
@@ -60,7 +60,7 @@ class Handler extends ExceptionHandler
 
             if ($e instanceof NotFoundHttpException){
                 return response()->json([
-                    'statusCode' => 404,
+                    'statusCode' => $e->status,
                     'message' => 'Could not find what you were looking for.',
                     'data' => null,
                 ]);
@@ -68,7 +68,7 @@ class Handler extends ExceptionHandler
 
             if ($e instanceof AuthorizationException){
                 return response()->json([
-                    'statusCode' => 401,
+                    'statusCode' => $e->status,
                     'message' => 'Unauthorized.',
                     'data' => null,
                 ]);
@@ -76,7 +76,7 @@ class Handler extends ExceptionHandler
 
             if ($e instanceof MethodNotAllowedHttpException){
                 return response()->json([
-                    'statusCode' => 405,
+                    'statusCode' => $e->status,
                     'message' => 'This method is not allowed for this endpoint.',
                     'data' => null,
                 ]);
@@ -85,7 +85,7 @@ class Handler extends ExceptionHandler
 
             if ($e instanceof QueryException ){
                 return response()->json([
-                    'statusCode' => 500,
+                    'statusCode' => $e->status,
                     'message' => 'Sql error occurred.',
                     'data' => null,
                 ]);
@@ -93,7 +93,7 @@ class Handler extends ExceptionHandler
 
             if ($e instanceof Throwable){
                 return response()->json([
-                    'statusCode' => 500,
+                    'statusCode' => $e->status,
                     'message' => $e->getMessage() ?? 'An error occurred.',
                     'data' => null,
                 ]);
