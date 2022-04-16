@@ -12,3 +12,65 @@ ion-toolbar ion-title.title-large {
     margin-top: 2em;
     margin-bottom: 1em;
 }
+
+.course-detail{
+    padding-left: 1em;
+    padding-right: 1em;
+    margin-top: 0.5em;
+}
+
+.course-detail-image{
+    margin-top: 2em;
+    border-radius: 3%;
+}
+
+.text-section-title{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 25px;
+    color:  #406B66;
+}
+
+.text-section-subtitle{
+font-family: 'Inter';
+font-style: normal;
+font-weight: 500;
+font-size: 15px;
+color: #7E7E7E;
+}
+
+.created-by-text{    
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;    
+    color: #000000;
+}
+
+.created-by-name{    
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;    
+    color: #406B66;
+}
+
+.add-to-courses ion-button{
+    --background: #406B66;
+}
+
+.lectures-list{
+    margin-top: 3em;
+}
+
+.lecture-item{
+    margin-top: 2em;
+}
+
+.lecture-item ion-button{
+    --background: #6C9D9B;
+    --padding-top: 2em;
+    --padding-bottom: 2em;
+
+}
