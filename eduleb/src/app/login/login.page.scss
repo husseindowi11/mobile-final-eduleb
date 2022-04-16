@@ -1,0 +1,93 @@
+ion-toolbar{
+    --background: #406B66;
+    --color: white;
+    --padding-top: 12em;
+}
+
+ion-toolbar ion-title.title-large {
+    color: white;
+    font-size: 40px;
+    text-align: center;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+}
+
+ion-content{
+    --background: white;
+}
+
+.title{
+    text-align: center;
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
+
+.title h1{
+    font-family: 'Inter';
+    font-style: normal;
+    color: #6C9D9B;
+    font-weight: 700;
+    font-size: 34px;
+    
+}
+
+.form-container{
+    padding-left: 1em;
+    padding-right: 1em;
+    text-align: center;
+}
+
+.form-input{
+    margin-bottom: 0.5em;
+}
+
+.form-button{
+    margin-top: 2em;
+}
+
+.form-label{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    color: #333333;
+    margin-bottom: 0.5em;
+}
+
+ion-input.form-input{
+    background: #F2F2F2;
+    border-radius: 10px;
+    border: none;
+    padding-top: 6px !important;
+    padding-bottom: 6px !important;
+    padding-left: 12px !important;
+
+}
+
+.form-container ion-button{
+    --background: #406B66;
+    --padding-top: 1.5em;
+    --padding-bottom: 1.5em;
+}
+
+.register-section{
+    margin-top: 2em;
+}
+
+.register-section p{
+    font-family: 'Inter';
+    font-style: normal;
+    color: #6C9D9B;
+    font-weight: 400;
+    font-size: 14px;
+}
+
+.register-section a{
+    color: #6C9D9B;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+}

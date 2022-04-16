@@ -1,0 +1,7 @@
+{
+  "name": "eduleb",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
