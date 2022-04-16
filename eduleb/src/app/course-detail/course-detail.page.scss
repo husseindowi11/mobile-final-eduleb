@@ -1,0 +1,14 @@
+ion-toolbar{
+    --background: #406B66;
+    --color: white;
+}
+
+ion-toolbar ion-title.title-large {
+    color: white;
+    font-size: 30px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    margin-top: 2em;
+    margin-bottom: 1em;
+}

@@ -20,6 +20,10 @@ const routes: Routes = [
         loadChildren: () => import('../mycourses/mycourses.module').then(m => m.MyCoursesPageModule)
       },
       {
+        path: 'course-detail',
+        loadChildren: () => import('../course-detail/course-detail.module').then(m => m.CourseDetailPageModule)
+      },
+      {
         path: '',
         redirectTo: '/tabs/home',
         pathMatch: 'full'
