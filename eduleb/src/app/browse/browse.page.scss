@@ -15,5 +15,28 @@ ion-toolbar ion-title.title-large {
 
 .browse-img-section{
     text-align: center;
-    margin-top: 2em;
+    margin-top: 3em;
+}
+
+.text-section{
+    text-align: center;
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+.text-section-title{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 25px;
+    color: #000000;
+}
+
+.text-section-subtitle{
+font-family: 'Inter';
+font-style: normal;
+font-weight: 500;
+font-size: 15px;
+color: #7E7E7E;
+
 }
