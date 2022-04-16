@@ -38,5 +38,35 @@ font-style: normal;
 font-weight: 500;
 font-size: 15px;
 color: #7E7E7E;
+}
 
+.category-section{
+
+}
+
+.category-section-title{
+font-family: 'Inter';
+font-style: normal;
+font-weight: 700;
+font-size: 16px;
+color: hsl(0, 0%, 0%);
+padding-left: 1em;
+padding-right: 1em;
+margin-top: 6em;
+}
+
+.category-section-items{
+
+}
+
+.category-section-list-item{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    color: #000000; 
+}
+
+ion-fab-button{
+    --background: #406B66;
 }
