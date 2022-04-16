@@ -24,6 +24,10 @@ const routes: Routes = [
         loadChildren: () => import('../course-detail/course-detail.module').then(m => m.CourseDetailPageModule)
       },
       {
+        path: 'category-courses',
+        loadChildren: () => import('../category-courses/category-courses.module').then(m => m.CategoryCoursesPageModule)
+      },
+      {
         path: '',
         redirectTo: '/tabs/home',
         pathMatch: 'full'
