@@ -1,1 +1,11 @@
+ion-tab-bar{
+    --background: #406B66;
+}
+ion-tab-button{
+    --color: #F6F6F6;
+    --color-selected: white;
+}
 
+ion-tab-button.tab-selected{
+    font-weight: 700;
+}
