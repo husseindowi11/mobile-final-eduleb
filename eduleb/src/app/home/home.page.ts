@@ -7,7 +7,7 @@ import { CourseService, Course } from '../apis/course.service';
   styleUrls: ['home.page.scss']
 })
 export class HomePage {
-  courses: Course[];
+  courses:any=[];
 
   constructor(private service: CourseService) {}
 

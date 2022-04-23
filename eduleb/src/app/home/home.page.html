@@ -18,38 +18,15 @@
     
     <div>
       <swiper [slidesPerView]="2" [autoplay]="true" [keyboard]="true" [pagination]="true" [scrollbar]="true" [zoom]="true">
-        <ng-template swiperSlide>
-          <ion-card href="/tabs/course-detail">
+        <ng-template swiperSlide *ngFor="let course of courses.data">
+          <ion-card href="/tabs/course-detail" >
             <img src="https://todassets.fra1.cdn.digitaloceanspaces.com/courses/1644426276.jpg" alt="">
             <ion-card-header>
-                <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
+                <ion-card-subtitle>{{ course.name }}</ion-card-subtitle>
             </ion-card-header>
           </ion-card>
         </ng-template>
-        <ng-template swiperSlide>          
-            <ion-card href="/tabs/course-detail">
-            <img src="https://todassets.fra1.cdn.digitaloceanspaces.com/courses/1644426276.jpg" alt="">
-            <ion-card-header>
-                <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
-            </ion-card-header>
-          </ion-card>
-        </ng-template>
-        <ng-template swiperSlide>          
-          <ion-card href="/tabs/course-detail">
-            <img src="https://todassets.fra1.cdn.digitaloceanspaces.com/courses/1644426276.jpg" alt="">
-            <ion-card-header>
-                <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
-            </ion-card-header>
-          </ion-card>
-        </ng-template>
-        <ng-template swiperSlide>          
-          <ion-card href="/tabs/course-detail">
-            <img src="https://todassets.fra1.cdn.digitaloceanspaces.com/courses/1644426276.jpg" alt="">
-            <ion-card-header>
-                <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
-            </ion-card-header>
-          </ion-card>
-        </ng-template>
+       
       </swiper>
     </div>
   </div>
