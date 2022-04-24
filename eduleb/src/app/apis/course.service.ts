@@ -25,4 +25,9 @@ export class CourseService {
 
     return response;
   }
+
+  getCourse(id){
+    let response = this.http.get(this.url + 'api/courses/' + id)
+    return response;
+  }
 }
