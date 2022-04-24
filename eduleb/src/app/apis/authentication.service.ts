@@ -24,4 +24,18 @@ export class AuthenticationService {
     return auth_response;
   }
 
+
+  register(body){
+    console.log(body);
+    let auth_response = this.http.post(this.url + 'api/auth/login', {
+      'email': body.email, 
+      'name': body.name,
+      'password': body.password,
+      'password_confirmation': body.password_confirmation,
+    });
+
+
+    return auth_response;
+  }
+
 }
