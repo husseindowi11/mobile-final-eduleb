@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Course, CourseService } from '../apis/course.service';
 
@@ -19,6 +20,10 @@ export class CourseDetailPage implements OnInit {
       this.details = response['data'];
       console.log(this.details);
     });
+  }
+
+  submitForm(form:NgForm){
+    console.log(form.value.course);
   }
 
 }
