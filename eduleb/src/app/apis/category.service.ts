@@ -10,10 +10,14 @@ export class CategoryService {
   constructor(private http: HttpClient) { }
 
   public getCategories(){
-    return this.http.get(this.url + 'api/categories');
+    return this.http.get(this.url + 'api/categories',{headers: {
+      'Authorization': 'Bearer ' + localStorage.getItem('token')
+    }});
   }
 
   public getCategoryCourses(id){
-    return this.http.get(this.url + 'api/categories/' + id);
+    return this.http.get(this.url + 'api/categories/' + id,{headers: {
+      'Authorization': 'Bearer ' + localStorage.getItem('token')
+    }});
   }
 }
