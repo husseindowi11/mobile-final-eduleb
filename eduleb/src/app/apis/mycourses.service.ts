@@ -10,7 +10,9 @@ export class MycoursesService {
   constructor(private http: HttpClient) { }
 
   getUserCourses(){
-    return this.http.get(this. url + 'api/user-courses');
+    return this.http.get(this. url + 'api/user-courses', {headers: {
+      'Authorization': 'Bearer ' + localStorage.getItem('token')
+    }});
   }
 
 }
