@@ -18,7 +18,9 @@ export class RegisterPage implements OnInit {
   ngOnInit() {
     this.ionicForm = this.formBuilder.group({
       email: ['', [Validators.required, Validators.pattern('[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$')]],
+      name: ['', [Validators.required, Validators.minLength(2)]],
       password: ['', [Validators.required, Validators.minLength(2)]],
+      password_confirmation: ['', [Validators.required, Validators.minLength(2)]],
     })
   }
 
