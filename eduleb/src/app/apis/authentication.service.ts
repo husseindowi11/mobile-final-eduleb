@@ -38,10 +38,11 @@ export class AuthenticationService {
     return auth_response;
   }
 
-  logout(body){
-    console.log(body);
-    let auth_response = this.http.post(this.url + 'api/auth/logout', {
-      'email': body.email, 
+  logout(){
+    let auth_response = this.http.post(this.url + 'api/auth/logout', {},{
+      headers: {
+        'Authorization': 'Bearer ' + localStorage.getItem('token')
+      },
     });
 
 
