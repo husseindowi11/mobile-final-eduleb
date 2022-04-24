@@ -22,9 +22,14 @@ export class CourseDetailPage implements OnInit {
     });
   }
 
-  submitForm(form:NgForm){
-
+  addForm(form:NgForm){
     this.service.addToMyCourses(form.value.course).subscribe( response => {
+      console.log(response);
+    });
+  }
+
+  removeForm(form:NgForm){
+    this.service.removeFromMycourses(form.value.course).subscribe( response => {
       console.log(response);
     });
   }
