@@ -27,7 +27,7 @@ export class AuthenticationService {
 
   register(body){
     console.log(body);
-    let auth_response = this.http.post(this.url + 'api/auth/login', {
+    let auth_response = this.http.post(this.url + 'api/auth/register', {
       'email': body.email, 
       'name': body.name,
       'password': body.password,
