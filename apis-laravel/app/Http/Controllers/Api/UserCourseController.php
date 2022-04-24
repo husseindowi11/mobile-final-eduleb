@@ -7,6 +7,8 @@ use App\Http\Requests\UserCourseRequest;
 use App\Http\Resources\Course\courseDetailResource;
 use App\Http\Resources\UserCourse\userCourseResource;
 use App\Models\Course;
+
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class UserCourseController extends Controller
@@ -19,7 +21,7 @@ class UserCourseController extends Controller
 
         return response()->json([
             'status_code' => 200,
-            'message' => 'Course was added successfully to user course list.',
+            'message' => 'Course was retrieved successfully.',
             'data' =>  userCourseResource::collection($data)
         ]);
     }

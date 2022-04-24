@@ -22,9 +22,8 @@ Route::middleware('auth:sanctum')->group(function (){
     Route::get('/user', function (Request $request) {
         return $request->user();
     });
-
     Route::apiResource('categories', CategoryController::class)->only('index', 'show');
-    Route::apiResource('courses', CourseController::class)->only('show');
+    Route::apiResource('courses', CourseController::class)->only('index','show');
     Route::apiResource('user-courses', UserCourseController::class)->only('index','store', 'destroy');
 });
 

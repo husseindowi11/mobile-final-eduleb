@@ -35,6 +35,7 @@ class AuthController extends Controller
 
     public function login(Request $request)
     {
+
         $request->validate([
             'email' => 'required|email',
             'password' => 'required',
@@ -43,8 +44,11 @@ class AuthController extends Controller
         $user = User::where('email', $request->email)->first();
 
         if (! $user || ! Hash::check($request->password, $user->password)) {
-            throw ValidationException::withMessages([
-                'email' => ['The provided credentials are incorrect.'],
+            return response()->json([
+                'status_code' => 401,
+                'message' => 'Login failed.',
+                'is_authenticated' => false,
+                'data' => null,
             ]);
         }
 
@@ -53,6 +57,7 @@ class AuthController extends Controller
         return response()->json([
             'status_code' => 200,
             'message' => 'Login successful.',
+            'is_authenticated' => true,
             'data' => new authResource($user),
         ]);
     }
