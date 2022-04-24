@@ -13,53 +13,55 @@
   </div>
 
   <div class="form-container">
-    <div class="form-input-group">
-      <ion-item lines="none">
-        <ion-label position="stacked" class="form-label">Email</ion-label>
-        <ion-input 
-        class="form-input"
-        placeholder="Enter Email"
-        name="email"
-        type="email"
-        ></ion-input>
-      </ion-item>
-    </div>
-    <div class="form-input-group">
-      <ion-item lines="none">
-        <ion-label position="stacked" class="form-label">Name</ion-label>
-        <ion-input 
-        class="form-input"
-        placeholder="Enter Name"
-        name="name"
-        type="text"
-        ></ion-input>
-      </ion-item>
-    </div>
-    <div class="form-input-group">
-      <ion-item lines="none">
-        <ion-label position="stacked" class="form-label">Password</ion-label>
-        <ion-input 
-        class="form-input"
-        placeholder="Enter Password"
-        name="password"
-        type="password"
-        ></ion-input>
-      </ion-item>
-    </div>
-    <div class="form-input-group">
-      <ion-item lines="none">
-        <ion-label position="stacked" class="form-label">Confirm Password</ion-label>
-        <ion-input 
-        class="form-input"
-        placeholder="Confirm Password"
-        name="password_confirmation"
-        type="password"
-        ></ion-input>
-      </ion-item>
-    </div>
-    <div class="form-button">
-      <ion-button size="small" href="/login" strong="true" expand="block" type="submit">Register</ion-button>
-    </div>
+    <form (ngSubmit)="submitForm()" [formGroup]="ionicForm" novalidate>
+      <div class="form-input-group">
+        <ion-item lines="none">
+          <ion-label position="stacked" class="form-label">Email</ion-label>
+          <ion-input 
+          class="form-input"
+          placeholder="Enter Email"
+          name="email"
+          type="email"
+          ></ion-input>
+        </ion-item>
+      </div>
+      <div class="form-input-group">
+        <ion-item lines="none">
+          <ion-label position="stacked" class="form-label">Name</ion-label>
+          <ion-input 
+          class="form-input"
+          placeholder="Enter Name"
+          name="name"
+          type="text"
+          ></ion-input>
+        </ion-item>
+      </div>
+      <div class="form-input-group">
+        <ion-item lines="none">
+          <ion-label position="stacked" class="form-label">Password</ion-label>
+          <ion-input 
+          class="form-input"
+          placeholder="Enter Password"
+          name="password"
+          type="password"
+          ></ion-input>
+        </ion-item>
+      </div>
+      <div class="form-input-group">
+        <ion-item lines="none">
+          <ion-label position="stacked" class="form-label">Confirm Password</ion-label>
+          <ion-input 
+          class="form-input"
+          placeholder="Confirm Password"
+          name="password_confirmation"
+          type="password"
+          ></ion-input>
+        </ion-item>
+      </div>
+      <div class="form-button">
+        <ion-button size="small" href="/login" strong="true" expand="block" type="submit">Register</ion-button>
+      </div>
+    </form>
   </div>
 
   <div class="form-container register-section">
