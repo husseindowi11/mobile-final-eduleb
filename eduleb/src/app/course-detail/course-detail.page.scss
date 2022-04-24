@@ -5,11 +5,11 @@ ion-toolbar{
 
 ion-toolbar ion-title.title-large {
     color: white;
-    font-size: 30px;
+    font-size: 20px;
     font-family: 'Inter';
     font-style: normal;
     font-weight: 700;
-    margin-top: 2em;
+    margin-top: 1em;
     margin-bottom: 1em;
 }
 
@@ -20,7 +20,7 @@ ion-toolbar ion-title.title-large {
 }
 
 .course-detail-image{
-    margin-top: 2em;
+    margin-top: 1em;
     border-radius: 3%;
 }
 
@@ -28,7 +28,7 @@ ion-toolbar ion-title.title-large {
     font-family: 'Inter';
     font-style: normal;
     font-weight: 700;
-    font-size: 25px;
+    font-size: 16px;
     color:  #406B66;
 }
 
@@ -36,7 +36,7 @@ ion-toolbar ion-title.title-large {
 font-family: 'Inter';
 font-style: normal;
 font-weight: 500;
-font-size: 15px;
+font-size: 12px;
 color: #7E7E7E;
 }
 
@@ -61,16 +61,16 @@ color: #7E7E7E;
 }
 
 .lectures-list{
-    margin-top: 3em;
+    margin-top: 1.2em;
 }
 
 .lecture-item{
-    margin-top: 2em;
+    margin-top: 0.75em;
 }
 
 .lecture-item ion-button{
     --background: #6C9D9B;
-    --padding-top: 2em;
-    --padding-bottom: 2em;
+    // --padding-top: 0.1em;
+    // --padding-bottom: 0.1em;
 
 }
