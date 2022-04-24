@@ -3,6 +3,7 @@ import { FormGroup, FormBuilder, Validators } from "@angular/forms";
 import { Router } from '@angular/router';
 import { AuthenticationService } from '../apis/authentication.service';
 
+const TOKEN_KEY = '';
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
@@ -48,6 +49,7 @@ export class LoginPage implements OnInit {
       }
 
       if(this.login_response['is_authenticated'] === true){
+
         this.router.navigate(['/tabs'])
       }
 
