@@ -27,21 +27,20 @@
 
    
     <div class="add-to-courses">
-      <form #values="ngForm" (ngSubmit)="addForm(values)" *ngIf="!details.in_course_list">
-        <ion-input type="hidden" name="course" ngModel value="{{details.id}}"></ion-input>
+      <form  (ngSubmit)="addForm()" *ngIf="!details.in_course_list">
         <ion-button  type="submit" expand="block">
           Add to my courses
         </ion-button>
       </form>
 
-      <form #values="ngForm" (ngSubmit)="removeForm(values)" *ngIf="details.in_course_list">
-        <ion-input type="hidden" name="course" ngModel value="{{details.id}}"></ion-input>
-        <ion-button color="danger" type="submit" expand="block">
-          Remove from my courses
-        </ion-button>
-      </form>
+
    
     </div>
+    <form  (ngSubmit)="removeForm()" *ngIf="details.in_course_list">
+      <ion-button color="danger" type="submit" expand="block">
+        Remove from my courses
+      </ion-button>
+    </form>
 
     <div class="lectures-list">
       

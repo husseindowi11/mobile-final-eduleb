@@ -11,25 +11,26 @@ import { Course, CourseService } from '../apis/course.service';
 export class CourseDetailPage implements OnInit {
 
   details=[];
+  id:any;
 
   constructor(private router: Router,private route: ActivatedRoute, private service:CourseService) { }
 
   ngOnInit() {
-    let id = this.route.snapshot.queryParamMap.get('course');
-    this.service.getCourse(id).subscribe( response => {
+    this.id = this.route.snapshot.queryParamMap.get('course');
+    this.service.getCourse(this.id).subscribe( response => {
       this.details = response['data'];
       console.log(this.details);
     });
   }
 
-  addForm(form:NgForm){
-    this.service.addToMyCourses(form.value.course).subscribe( response => {
+  addForm(){
+    this.service.addToMyCourses(this.id).subscribe( response => {
       console.log(response);
     });
   }
 
-  removeForm(form:NgForm){
-    this.service.removeFromMycourses(form.value.course).subscribe( response => {
+  removeForm(){
+    this.service.removeFromMycourses(this.id).subscribe( response => {
       console.log(response);
     });
   }

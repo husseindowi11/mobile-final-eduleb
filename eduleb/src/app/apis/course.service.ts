@@ -50,11 +50,11 @@ export class CourseService {
   }
 
   removeFromMycourses(id){
-    let response = this.http.delete(this.url + 'api/user-courses/destroy' + id,
+    let response = this.http.delete(this.url + 'api/user-courses/' + id,
     {
       headers: {
         'Authorization': 'Bearer ' + localStorage.getItem('token')
-      } 
+      },
     }
     );
     return response;
