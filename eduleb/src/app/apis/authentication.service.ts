@@ -16,13 +16,10 @@ export class AuthenticationService {
 
   constructor(private http: HttpClient) { }
 
-  login(email:string, password:string){
-    let body = {'email': email, 'password': password};
-    let auth_response = this.http.post(this.url + 'api/auth/login', JSON.stringify(body));
+  login(body){
+    console.log(body);
+    let auth_response = this.http.post(this.url + 'api/auth/login', {'email': body.email, 'password': body.password});
 
-    if(!auth_response['is_authenticated']){
-      return false;
-    }
 
     return auth_response;
   }

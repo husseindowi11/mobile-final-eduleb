@@ -13,31 +13,35 @@
   </div>
 
   <div class="form-container">
-    <div class="form-input-group">
-      <ion-item lines="none">
-        <ion-label position="stacked" class="form-label">Email</ion-label>
-        <ion-input 
-        class="form-input"
-        placeholder="Enter Email"
-        name="email"
-        type="email"
-        ></ion-input>
-      </ion-item>
-    </div>
-    <div class="form-input-group">
-      <ion-item lines="none">
-        <ion-label position="stacked" class="form-label">Password</ion-label>
-        <ion-input 
-        class="form-input"
-        placeholder="Enter Password"
-        name="password"
-        type="password"
-        ></ion-input>
-      </ion-item>
-    </div>
-    <div class="form-button">
-      <ion-button size="small" strong="true" href='tabs' expand="block" type="submit">Login</ion-button>
-    </div>
+    <form (ngSubmit)="submitForm()" [formGroup]="ionicForm" novalidate>
+      <div class="form-input-group">
+        <ion-item lines="none">
+          <ion-label position="stacked" class="form-label">Email</ion-label>
+          <ion-input 
+          class="form-input"
+          placeholder="Enter Email"
+          name="email"
+          type="email"
+          formControlName="email"
+          ></ion-input>
+        </ion-item>
+      </div>
+      <div class="form-input-group">
+        <ion-item lines="none">
+          <ion-label position="stacked" class="form-label">Password</ion-label>
+          <ion-input 
+          class="form-input"
+          placeholder="Enter Password"
+          name="password"
+          type="password"
+          formControlName="password"
+          ></ion-input>
+        </ion-item>
+      </div>
+      <div class="form-button">
+        <ion-button size="small" strong="true" href='tabs' expand="block" type="submit">Login</ion-button>
+      </div>
+    </form>
   </div>
 
   <div class="form-container register-section">
