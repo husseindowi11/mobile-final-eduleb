@@ -26,6 +26,12 @@
           ></ion-input>
         </ion-item>
       </div>
+      <span class="error" *ngIf="is_submitted && errorControl.email.errors?.required">
+        Email is required.
+      </span>
+      <span class="error" *ngIf="is_submitted && errorControl.email.errors?.pattern">
+        Please provide valid email id.
+      </span>
       <div class="form-input-group">
         <ion-item lines="none">
           <ion-label position="stacked" class="form-label">Name</ion-label>
@@ -38,6 +44,9 @@
           ></ion-input>
         </ion-item>
       </div>
+      <span class="error" *ngIf="is_submitted && errorControl.name.errors?.required">
+        Name is required.
+      </span>
       <div class="form-input-group">
         <ion-item lines="none">
           <ion-label position="stacked" class="form-label">Password</ion-label>
@@ -50,6 +59,9 @@
           ></ion-input>
         </ion-item>
       </div>
+      <span class="error" *ngIf="is_submitted && errorControl.password.errors?.required">
+        Password is required.
+      </span>
       <div class="form-input-group">
         <ion-item lines="none">
           <ion-label position="stacked" class="form-label">Confirm Password</ion-label>
@@ -62,6 +74,9 @@
           ></ion-input>
         </ion-item>
       </div>
+      <span class="error" *ngIf="is_submitted && errorControl.password_confirmation.errors?.required">
+        Password Confirmation is required.
+      </span>
       <div class="form-button">
         <ion-button size="small" href="/login" strong="true" expand="block" type="submit">Register</ion-button>
       </div>
