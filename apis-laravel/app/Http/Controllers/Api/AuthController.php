@@ -64,11 +64,10 @@ class AuthController extends Controller
 
     public function logout(Request $request)
     {
-        $user = User::where('email', $request->email)->first();
 
-        if ($user) {
-            $user->tokens()->delete();
-        }
+
+        auth()->user()->tokens()->delete();
+
 
         return response()->json([
             'status_code' => 200,

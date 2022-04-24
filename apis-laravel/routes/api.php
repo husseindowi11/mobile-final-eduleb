@@ -25,11 +25,12 @@ Route::middleware('auth:sanctum')->group(function (){
     Route::apiResource('categories', CategoryController::class)->only('index', 'show');
     Route::apiResource('courses', CourseController::class)->only('index','show');
     Route::apiResource('user-courses', UserCourseController::class)->only('index','store', 'destroy');
+    Route::post('auth/logout', [AuthController::class, 'logout']);
 });
 
 
 
 Route::post('auth/login', [AuthController::class, 'login'])->name('auth.login');
 Route::post('auth/register', [AuthController::class, 'register'])->name('auth.login');
-Route::post('auth/logout', [AuthController::class, 'logout']);
+
 
