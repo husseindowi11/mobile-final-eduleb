@@ -5,10 +5,14 @@ ion-toolbar{
 
 ion-toolbar ion-title.title-large {
     color: white;
-    font-size: 30px;
+    font-size: 20px;
     font-family: 'Inter';
     font-style: normal;
     font-weight: 700;
-    margin-top: 2em;
+    margin-top: 1em;
     margin-bottom: 1em;
+}
+
+ion-card-subtitle{
+    --color: #406B66;
 }
