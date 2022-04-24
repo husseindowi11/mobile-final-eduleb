@@ -34,4 +34,17 @@ export class CourseService {
     }});
     return response;
   }
+
+  addToMyCourses(id){
+    let response = this.http.post(this.url + 'api/user-courses/',
+    {
+      'course_id': id
+    },
+    {
+      headers: {
+        'Authorization': 'Bearer ' + localStorage.getItem('token')
+      } 
+    }
+    );
+  }
 }
