@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CategoryService } from '../apis/category.service';
 
 @Component({
   selector: 'app-browse',
@@ -6,7 +7,15 @@ import { Component } from '@angular/core';
   styleUrls: ['browse.page.scss']
 })
 export class BrowsePage {
+  categories:any=[];
 
-  constructor() {}
+  constructor(private service: CategoryService) {}
+
+  ngOnInit(){
+    this.service.getCategories().subscribe( response => {
+      this.categories = response;
+      console.log(this.categories);
+    });
+  }
 
 }
