@@ -27,6 +27,8 @@ class CourseController extends Controller
     public function show(Course $course){
 
         $course->load('course_videos', 'category');
+        $check = auth()->user()->courses()->where('course_id', $course->id)->count();
+        $course->in_course_list = $check > 0 ? 1 : 0;
 
         return response()->json([
             'status_code' => 200,
