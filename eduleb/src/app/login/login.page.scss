@@ -1,16 +1,18 @@
 ion-toolbar{
     --background: #406B66;
     --color: white;
-    --padding-top: 12em;
+
 }
 
 ion-toolbar ion-title.title-large {
     color: white;
-    font-size: 40px;
-    text-align: center;
+    font-size: 30px;
     font-family: 'Inter';
     font-style: normal;
     font-weight: 700;
+    margin-top: 2em;
+    margin-bottom: 1em;
+    text-align: center;
 }
 
 ion-content{
@@ -20,7 +22,7 @@ ion-content{
 .title{
     text-align: center;
     margin-top: 2em;
-    margin-bottom: 2em;
+    margin-bottom: 0.5em;
 }
 
 
@@ -29,7 +31,7 @@ ion-content{
     font-style: normal;
     color: #6C9D9B;
     font-weight: 700;
-    font-size: 34px;
+    font-size: 23px;
     
 }
 
@@ -40,11 +42,13 @@ ion-content{
 }
 
 .form-input{
-    margin-bottom: 0.5em;
+    margin-bottom: 0.2em;
 }
 
 .form-button{
     margin-top: 2em;
+    margin-left: 2em;
+    margin-right: 2em;
 }
 
 .form-label{
@@ -58,18 +62,13 @@ ion-content{
 
 ion-input.form-input{
     background: #F2F2F2;
-    border-radius: 10px;
+    border-radius: 7px;
     border: none;
-    padding-top: 6px !important;
-    padding-bottom: 6px !important;
     padding-left: 12px !important;
-
 }
 
 .form-container ion-button{
     --background: #406B66;
-    --padding-top: 1.5em;
-    --padding-bottom: 1.5em;
 }
 
 .register-section{
@@ -81,7 +80,7 @@ ion-input.form-input{
     font-style: normal;
     color: #6C9D9B;
     font-weight: 400;
-    font-size: 14px;
+    font-size: 10px;
 }
 
 .register-section a{
@@ -89,5 +88,5 @@ ion-input.form-input{
     font-family: 'Inter';
     font-style: normal;
     font-weight: 700;
-    font-size: 14px;
+    font-size: 10px;
 }
