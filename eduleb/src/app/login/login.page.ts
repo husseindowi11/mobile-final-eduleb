@@ -12,6 +12,8 @@ export class LoginPage implements OnInit {
   ionicForm: FormGroup;
   user:any=[];
   login_response:any=[];
+  isSubmitted = false;
+  
 
   constructor(public formBuilder: FormBuilder, private service: AuthenticationService, private router: Router) { 
 
@@ -23,10 +25,18 @@ export class LoginPage implements OnInit {
       password: ['', [Validators.required, Validators.minLength(2)]],
     })
   }
+  get errorControl() {
+    return this.ionicForm.controls;
+  }
 
   submitForm() {
+    this.isSubmitted = true;
+    if (!this.ionicForm.valid) {
+      console.log('Please provide all the required values!')
+      return false;
+    }else{
     console.log(this.ionicForm.value)
-    this.service.login(this.ionicForm.value).subscribe( async (response) => {
+    this.service.login(this.ionicForm.value).subscribe(response => {
       this.user = response['data'];
       this.login_response = response;
       console.log(response);
@@ -36,9 +46,12 @@ export class LoginPage implements OnInit {
       }
 
     });
+  }
 
 
     
   }
 
 }
+
+

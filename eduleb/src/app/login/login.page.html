@@ -25,6 +25,12 @@
           formControlName="email"
           ></ion-input>
         </ion-item>
+        <span class="error" *ngIf="isSubmitted && errorControl.email.errors?.required">
+          Email is required.
+        </span>
+        <span class="error" *ngIf="isSubmitted && errorControl.email.errors?.pattern">
+          Please provide valid email id.
+        </span>
       </div>
       <div class="form-input-group">
         <ion-item lines="none">
@@ -37,6 +43,9 @@
           formControlName="password"
           ></ion-input>
         </ion-item>
+        <span class="error" *ngIf="isSubmitted && errorControl.password.errors?.required">
+          Password is required.
+        </span>
       </div>
       <div class="form-button">
         <ion-button size="small" strong="true" expand="block" type="submit">Login</ion-button>
