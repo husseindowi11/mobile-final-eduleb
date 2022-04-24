@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { MycoursesService } from '../apis/mycourses.service';
 
 @Component({
   selector: 'app-mycourses',
@@ -7,6 +8,16 @@ import { Component } from '@angular/core';
 })
 export class MyCoursesPage {
 
-  constructor() {}
+  courses:any=[];
+
+  constructor(private service: MycoursesService) {}
+
+  ngOnInit(){
+    this.service.getUserCourses().subscribe( response => {
+      this.courses = response;
+      console.log(this.courses);
+    });
+  }
+  
 
 }
