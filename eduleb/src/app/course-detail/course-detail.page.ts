@@ -23,7 +23,10 @@ export class CourseDetailPage implements OnInit {
   }
 
   submitForm(form:NgForm){
-    console.log(form.value.course);
+
+    this.service.addToMyCourses(form.value.course).subscribe( response => {
+      console.log(response);
+    });
   }
 
 }
