@@ -19,7 +19,7 @@
     <div>
       <swiper [slidesPerView]="2" [autoplay]="true" [keyboard]="true" [pagination]="true" [scrollbar]="true" [zoom]="true">
         <ng-template swiperSlide *ngFor="let course of courses.data">
-          <ion-card href="/tabs/course-detail" >
+          <ion-card href="/tabs/course-detail?course={{course.id}}" >
             <img src="{{course.image}}" alt="">
             <ion-card-header>
                 <ion-card-subtitle>{{ course.name }}</ion-card-subtitle>
