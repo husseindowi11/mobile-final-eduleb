@@ -27,11 +27,19 @@ export class CourseDetailPage implements OnInit {
     this.service.addToMyCourses(this.id).subscribe( response => {
       console.log(response);
     });
+    this.service.getCourse(this.id).subscribe( response => {
+      this.details = response['data'];
+      console.log(this.details);
+    });
   }
 
   removeForm(){
     this.service.removeFromMycourses(this.id).subscribe( response => {
       console.log(response);
+    });
+    this.service.getCourse(this.id).subscribe( response => {
+      this.details = response['data'];
+      console.log(this.details);
     });
   }
 
