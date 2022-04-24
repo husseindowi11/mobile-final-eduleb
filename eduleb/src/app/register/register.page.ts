@@ -43,7 +43,7 @@ export class RegisterPage implements OnInit {
         //   this.invalid_credentials = true;
         // }
 
-        if(this.register_response['is_authenticated'] === 200){
+        if(this.register_response['status_code'] === 200){
           this.router.navigate(['/login'])
         }
 
