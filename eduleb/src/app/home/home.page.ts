@@ -7,14 +7,14 @@ import { CourseService, Course } from '../apis/course.service';
   styleUrls: ['home.page.scss']
 })
 export class HomePage {
-  courses:any=[];
+  categories:any=[];
 
   constructor(private service: CourseService) {}
 
   ngOnInit(){
     this.service.getAllCourses().subscribe( response => {
-      this.courses = response;
-      console.log(this.courses);
+      this.categories = response['data'];
+      console.log(this.categories);
     });
   }
 
