@@ -16,7 +16,7 @@ export class CategoryCoursesPage implements OnInit {
   ngOnInit() {
     let id = this.route.snapshot.queryParamMap.get('category');
     this.service.getCategoryCourses(id).subscribe( response => {
-      this.courses = response;
+      this.courses = response['data']['courses'];
       console.log(this.courses);
     });
   }

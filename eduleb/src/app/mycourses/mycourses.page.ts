@@ -14,8 +14,8 @@ export class MyCoursesPage {
 
   ngOnInit(){
     this.service.getUserCourses().subscribe( response => {
-      this.courses = response;
-      console.log(this.courses);
+      this.courses = response['data'];
+      console.log(this.courses['data']);
     });
   }
   

@@ -9,7 +9,7 @@ import { Course, CourseService } from '../apis/course.service';
 })
 export class CourseDetailPage implements OnInit {
 
-  details;
+  details=[];
 
   constructor(private router: Router,private route: ActivatedRoute, private service:CourseService) { }
 
