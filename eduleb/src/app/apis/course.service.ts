@@ -48,4 +48,15 @@ export class CourseService {
     );
     return response;
   }
+
+  removeFromMycourses(id){
+    let response = this.http.delete(this.url + 'api/user-courses/' + id,
+    {
+      headers: {
+        'Authorization': 'Bearer ' + localStorage.getItem('token')
+      } 
+    }
+    );
+    return response;
+  }
 }
