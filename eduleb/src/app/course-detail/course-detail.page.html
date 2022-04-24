@@ -29,8 +29,8 @@
     <div class="add-to-courses">
       <form #values="ngForm" (ngSubmit)="submitForm(values)">
         <ion-input type="hidden" name="course" ngModel value="{{details.id}}"></ion-input>
-        <ion-button type="submit" expand="block">
-          Add to my courses
+        <ion-button color="danger" type="submit" expand="block">
+          Remove from my courses
         </ion-button>
       </form>
    
