@@ -46,7 +46,7 @@
       
 
       <div class="lecture-item" *ngFor="let lecture of details.course_videos">
-        <ion-button shape="round" expand="block" >
+        <ion-button shape="round" expand="block" (click)="playVideo({{detail.url}})">
           <ion-icon slot="start" name="play"></ion-icon>
           {{ lecture.name }}
         </ion-button>

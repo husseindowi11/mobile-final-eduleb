@@ -44,8 +44,8 @@ export class CourseDetailPage implements OnInit {
     });
   }
 
-  playeVideo(){
-    this.videoPlayer.play('https://youtu.be/2ICc10-lUfQ').then(() => {
+  playVideo(url:string){
+    this.videoPlayer.play(url).then(() => {
       console.log('video completed');
       }).catch(err => {
       console.log(err);
