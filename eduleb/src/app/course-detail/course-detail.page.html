@@ -28,8 +28,8 @@
    
     <div class="add-to-courses">
       <form  (ngSubmit)="addForm()" *ngIf="!details.in_course_list">
-        <ion-button  type="submit" expand="block">
-          Add to my courses
+        <ion-button  size="small" type="submit" expand="block">
+          Add to courses
         </ion-button>
       </form>
 
@@ -37,8 +37,8 @@
    
     </div>
     <form  (ngSubmit)="removeForm()" *ngIf="details.in_course_list">
-      <ion-button color="danger" type="submit" expand="block">
-        Remove from my courses
+      <ion-button size="small" color="danger" type="submit" expand="block">
+        Remove from courses
       </ion-button>
     </form>
 
