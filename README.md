@@ -1,6 +1,17 @@
 # mobile-final-eduleb
+- About: Eduleb is a platform where users can watch any course freely.
 
-Instructions:
+- Features:
+ - Authentication: (login, register, logout).
+ - Home Page with a mix of courses.
+ - Display Course Categories.
+ - Displaye Courses of each Category.
+ - View Course.
+ - Watch a Lecture.
+ - Add course to user list.
+ - Remove course from user list.
+
+- Instructions:
 
   - A. For Apis:
     - 1. Open apis-laravel folder.
