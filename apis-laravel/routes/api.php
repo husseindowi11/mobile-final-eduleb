@@ -18,6 +18,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+//note: All exception are being handled, check Handler.php for details
+
 Route::middleware('auth:sanctum')->group(function (){
     Route::get('/user', function (Request $request) {
         return $request->user();
