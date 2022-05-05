@@ -2,14 +2,14 @@
 - About: Eduleb is a platform where users can watch any course freely.
 
 - Features:
- - Authentication: (login, register, logout).
- - Home Page with a mix of courses.
- - Display Course Categories.
- - Displaye Courses of each Category.
- - View Course.
- - Watch a Lecture.
- - Add course to user list.
- - Remove course from user list.
+    - Authentication: (login, register, logout).
+    - Home Page with a mix of courses.
+    - Display Course Categories.
+    - Displaye Courses of each Category.
+    - View Course.
+    - Watch a Lecture.
+    - Add course to user list.
+    - Remove course from user list.
 
 - Instructions:
 
