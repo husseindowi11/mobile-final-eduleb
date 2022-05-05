@@ -14,7 +14,7 @@ use Illuminate\Http\Request;
 class UserCourseController extends Controller
 {
 
-    //store course to user course list
+    //get user courses
     public function index(){
 
         $data = auth()->user()->courses;

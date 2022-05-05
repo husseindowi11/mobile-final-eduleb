@@ -13,6 +13,7 @@ use Illuminate\Http\Request;
 class CourseController extends Controller
 {
 
+    //get all courses course
     public function index(){
         $categories = Category::with('courses')->get();
 
