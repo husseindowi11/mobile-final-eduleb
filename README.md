@@ -11,9 +11,9 @@ Instructions:
     - 6. run php artisan serve.
     - 7. Happy Testing :).
     
-  B. For App:
-    1. Open eduleb folder.
-    2. run npm install
-    3. run ionic ionic serve.
-    7. Happy Testing x2 :).
+  - B. For App:
+    - 1. Open eduleb folder.
+    - 2. run npm install
+    - 3. run ionic ionic serve.
+    - 7. Happy Testing x2 :).
    
